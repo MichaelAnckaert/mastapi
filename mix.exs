@@ -7,7 +7,14 @@ defmodule Mastapi.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -23,7 +30,8 @@ defmodule Mastapi.MixProject do
     [
       {:httpoison, "~> 1.8"},
       {:jason, "~> 1.3"},
-      {:html_sanitize_ex, "~> 1.4"}
+      {:html_sanitize_ex, "~> 1.4"},
+      {:excoveralls, "~> 0.15", only: :test},
     ]
   end
 end
