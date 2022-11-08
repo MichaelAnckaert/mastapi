@@ -8,7 +8,7 @@ defmodule Mastapi.Profile do
     |> print_profile
   end
 
-  defp get_url(id) do
+  def get_url(id) do
     "#{@instance}/api/v1/accounts/#{id}"
   end
 
@@ -23,12 +23,13 @@ defmodule Mastapi.Profile do
     end
   end
 
-  defp decode_data(body) do
+  def decode_data(body) do
     case Jason.decode(body, %{keys: :atoms}) do
       {:ok, data} ->
         data
       {:error, _error} ->
         IO.puts "Failed to decode JSON data"
+        :error
     end
   end
 
