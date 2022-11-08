@@ -1,5 +1,6 @@
-defmodule Mastapi do
+defmodule Mastapi.Profile do
   @instance "https://fosstodon.org"
+
   def get_profile(id) do
     get_url(id)
     |> get_data
