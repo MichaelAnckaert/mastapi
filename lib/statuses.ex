@@ -34,12 +34,12 @@ defmodule Mastapi.Statuses do
     end
   end
 
-  defp filter_threads(data) do
+  def filter_threads(data) do
     is_thread? = &(is_nil &1.in_reply_to_id)
     Enum.filter(data, is_thread?)
   end
 
-  defp exclude_reblogs(data) do
+  def exclude_reblogs(data) do
     is_not_reblog? = &(is_nil &1.reblog)
     Enum.filter(data, is_not_reblog?)
   end
