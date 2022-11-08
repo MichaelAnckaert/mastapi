@@ -8,7 +8,7 @@ defmodule Mastapi.Profile do
     |> print_profile
   end
 
-  defp get_url(id) do
+  def get_url(id) do
     "#{@instance}/api/v1/accounts/#{id}"
   end
 
