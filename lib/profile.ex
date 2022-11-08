@@ -23,7 +23,7 @@ defmodule Mastapi.Profile do
     end
   end
 
-  defp decode_data(body) do
+  def decode_data(body) do
     case Jason.decode(body, %{keys: :atoms}) do
       {:ok, data} ->
         data
