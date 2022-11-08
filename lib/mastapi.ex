@@ -3,7 +3,7 @@ defmodule Mastapi do
   def get_profile(id) do
     get_url(id)
     |> get_data
-    |> decode_body
+    |> decode_data
     |> print_profile
   end
 
@@ -22,7 +22,7 @@ defmodule Mastapi do
     end
   end
 
-  defp decode_body(body) do
+  defp decode_data(body) do
     case Jason.decode(body, %{keys: :atoms}) do
       {:ok, data} ->
         data
