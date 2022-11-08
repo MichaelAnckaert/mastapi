@@ -29,6 +29,7 @@ defmodule Mastapi.Profile do
         data
       {:error, _error} ->
         IO.puts "Failed to decode JSON data"
+        :error
     end
   end
 
