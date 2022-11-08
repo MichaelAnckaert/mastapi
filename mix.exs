@@ -22,7 +22,8 @@ defmodule Mastapi.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.8"},
-      {:jason, "~> 1.3"}
+      {:jason, "~> 1.3"},
+      {:html_sanitize_ex, "~> 1.4"}
     ]
   end
 end

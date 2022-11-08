@@ -33,10 +33,12 @@ defmodule Mastapi.Profile do
   end
 
   defp print_profile(data) do
+    note = HtmlSanitizeEx.strip_tags(data.note)
+
     IO.puts "#{data.display_name} (#{data.url})"
     IO.puts " followers: #{data.followers_count}"
     IO.puts " following: #{data.following_count}"
-    IO.puts " #{data.note}"
+    IO.puts " #{note}"
   end
 
 end
